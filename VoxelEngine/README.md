@@ -10,8 +10,21 @@ dotnet run -- --test       # headless test suite (65 checks)
 dotnet run -- --bench      # measure the simulation
 ```
 
-Requires the **.NET 8 SDK**. The only dependency is OpenTK (window + OpenGL
-bindings), restored automatically.
+Requires the **.NET 10 SDK** to build or run the source. The only dependency is
+OpenTK (window + OpenGL bindings), restored automatically. The project targets
+.NET 10 but keeps C# language version 12; runtime and language versions are
+separate choices and this migration does not require new language features.
+
+For a Windows x64 distribution that uses an installed .NET 10 runtime:
+
+```powershell
+dotnet publish -c Release -r win-x64 --self-contained false -o publish-win
+```
+
+Distribute the entire `publish-win` folder, not just the `.exe`. To include
+.NET itself instead, replace `false` with `true`; that self-contained build is
+larger and should be rebuilt when the runtime receives security updates. It
+still needs a compatible operating system and graphics drivers.
 
 ![the world](docs/screenshot.png)
 
