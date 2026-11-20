@@ -1,0 +1,9 @@
+Voxel Engine — Windows x64 / .NET 10
+
+Extract the entire ZIP into a folder, then run VoxelEngine.exe. Keep all the DLL and JSON files alongside it.
+This build requires the Microsoft .NET 10 x64 runtime installed (your existing 10.0.3 runtime should satisfy it). It does not require the SDK to run.
+The window build was published for Windows but could not be run on Windows in the build environment.
+
+Controls: WASD move, Space up, Shift down, mouse look, left click remove, right click place, 1-0 select. P pause, R regenerate, Esc release cursor.
+
+This version still does not implement the requested velocity / collision / moving-chain system.
